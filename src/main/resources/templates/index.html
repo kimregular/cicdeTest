@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>cicdTest</title>
+</head>
+<body>
+<h1>CICD Test</h1>
+<p th:text="${hello}">message</p>
+<div></div>
+<form action="/home/members" method="post">
+    <div>
+        <label for="name">이름</label>
+        <input id="name" type="text" name = "name" placeholder="이름">
+        <button type="submit">enter</button>
+    </div>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="member: ${members}">
+        <td th:text="${member.name}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
