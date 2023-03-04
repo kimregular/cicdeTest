@@ -26,6 +26,7 @@ jobs:
       - run: echo "${{ secrets.PROPERTIES }}" > ./src/main/resources/application.properties
       - run: cat ./src/main/resources/application.properties
       #        gradle properties
+      - rub: mkdir ./gradle/wrapper/
       - run: touch ./gradle/wrapper/gradle-wrapper.properties
       - run: echo "${{ secrets.GRADLE }}" > ./gradle/wrapper/gradle-wrapper.properties
       - run: cat ./gradle/wrapper/gradle-wrapper.properties
