@@ -37,6 +37,9 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+jar {
+    enabled = false
+}
 
 bootRun {
     String activeProfile = System.properties['spring.profiles.active']
