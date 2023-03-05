@@ -15,15 +15,15 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/home")
+//@RequestMapping("/")
 public class MainController {
 
     private final MemberService memberService;
 
-    @GetMapping
+    @GetMapping("/")
     public String home(Model model) {
         List<Member> members = memberService.getMembers();
-        System.out.println(members);
+        model.addAttribute("hello", members.get(members.size()-1).getName());
         model.addAttribute("members", members);
         return "index";
     }
@@ -32,6 +32,6 @@ public class MainController {
     public String addMember(HttpServletRequest request) {
         String name = request.getParameter("name");
         memberService.addMember(name);
-        return "redirect:/home";
+        return "redirect:/";
     }
 }
