@@ -23,7 +23,7 @@ public class MainController {
     @GetMapping("/")
     public String home(Model model) {
         List<Member> members = memberService.getMembers();
-        model.addAttribute("hello", members.get(members.size()-1).getName());
+//        model.addAttribute("hello", members.get(members.size()-1).getName());
         model.addAttribute("members", members);
         return "index";
     }
